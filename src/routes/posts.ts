@@ -11,10 +11,10 @@ routes.use(express.urlencoded({ extended: false }));
 /** Takes care of JSON data */
 routes.use(express.json());
 
-routes.get('/character', controller.getPosts);
-routes.get('/character/:id', controller.getPost);
+routes.get('/character', controller.getCharacters);
+routes.get('/character/:id', controller.getCharacter);
 routes.put('/switchstatus/:id', controller.switchstatus);
-routes.delete('/delete/:id', controller.deletePost);
+routes.delete('/delete/:id', controller.deleteCharacter);
 
 
 export = routes;

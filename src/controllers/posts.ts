@@ -1,24 +1,9 @@
 /** source/controllers/posts.ts */
 import { Request, Response, NextFunction } from 'express';
-import express from 'express';
-import axios, { AxiosResponse } from 'axios';
-import { ObjectId } from "mongodb";
-//import Character, {ICharacter} from '../models/Characters';
-import { Db, MongoClient } from 'mongodb';
 import { collections } from "../mongo/mongoconnect";
-import { Character, CharacterAPI } from '../types';
+import {  CharacterAPI } from '../types';
 
-import router from '../routes/posts';
-import { EpisodeAPI } from '../types';
 
-interface Charact extends Document{
-    id: number;
-    name: string;
-    status: string;
-    species: string;
-    episode: [EpisodeAPI];
-    _id: string;
-  };
 
 
 // getting characters
@@ -95,4 +80,4 @@ const deletePost = async (req: Request, res: Response, next: NextFunction) => {
 
 
 
-export default { getPosts, getPost, switchstatus, deletePost};
+export default { getCharacters: getPosts, getCharacter: getPost, switchstatus, deleteCharacter: deletePost};
